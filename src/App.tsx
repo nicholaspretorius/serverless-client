@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { GroupsList } from './components/GroupsList'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { Grid, Menu, Segment } from 'semantic-ui-react'
+import { ImagesList } from './components/ImagesList'
 import { NotFound } from './components/NotFound'
+import { CreateImage } from './components/CreateImage'
 import { CreateGroup } from './components/CreateGroup'
 
 export interface AppProps {}
@@ -43,6 +45,10 @@ export default class App extends Component<AppProps, AppState> {
     return (
       <Switch>
         <Route path="/groups/create" exact component={CreateGroup} />
+
+        <Route path="/images/:groupId" exact component={ImagesList} />
+
+        <Route path="/images/:groupId/create" exact component={CreateImage} />
 
         <Route path="/" exact component={GroupsList} />
 
