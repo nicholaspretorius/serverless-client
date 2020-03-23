@@ -59,7 +59,7 @@ export class ImagesList extends React.PureComponent<
 
         <Card.Group>
           {this.state.images.map(image => {
-            return <UdagramImage key={image.id} image={image} />
+            return <UdagramImage key={image.imageId} image={image} />
           })}
         </Card.Group>
       </div>
