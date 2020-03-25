@@ -13,7 +13,10 @@ interface GroupsListState {
   groups: GroupModel[]
 }
 
-export class GroupsList extends React.PureComponent<GroupsListProps, GroupsListState> {
+export class GroupsList extends React.PureComponent<
+  GroupsListProps,
+  GroupsListState
+> {
   state: GroupsListState = {
     groups: []
   }
@@ -50,9 +53,10 @@ export class GroupsList extends React.PureComponent<GroupsListProps, GroupsListS
         <Divider clearing />
 
         <Card.Group>
-          {this.state.groups.map(group => {
-            return <Group key={group.id} group={group} />
-          })}
+          {this.state.groups.length > 0 &&
+            this.state.groups.map(group => {
+              return <Group key={group.id} group={group} />
+            })}
         </Card.Group>
       </div>
     )
